@@ -1,0 +1,829 @@
+{
+  "id": "fd928c09-7b78-4e16-ba98-ddc15ca33eca",
+  "revision": 0,
+  "last_node_id": 7,
+  "last_link_id": 6,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "WD14Tagger|pysssss",
+      "pos": [
+        490,
+        40
+      ],
+      "size": [
+        400,
+        210
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "threshold",
+          "name": "threshold",
+          "type": "FLOAT",
+          "widget": {
+            "name": "threshold"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "character_threshold",
+          "name": "character_threshold",
+          "type": "FLOAT",
+          "widget": {
+            "name": "character_threshold"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "replace_underscore",
+          "name": "replace_underscore",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "replace_underscore"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "trailing_comma",
+          "name": "trailing_comma",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "trailing_comma"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "exclude_tags",
+          "name": "exclude_tags",
+          "type": "STRING",
+          "widget": {
+            "name": "exclude_tags"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-wd14-tagger",
+        "ver": "9e0a6e700299182fc05c58b62e7ad9f72182a78b",
+        "Node name for S&R": "WD14Tagger|pysssss",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "wd-v1-4-moat-tagger-v2",
+        0.35,
+        0.85,
+        false,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 5,
+      "type": "Text Concatenate",
+      "pos": [
+        1000,
+        200
+      ],
+      "size": [
+        320,
+        142
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "text_a",
+          "name": "text_a",
+          "shape": 7,
+          "type": "STRING",
+          "link": 5
+        },
+        {
+          "localized_name": "text_b",
+          "name": "text_b",
+          "shape": 7,
+          "type": "STRING",
+          "link": 4
+        },
+        {
+          "localized_name": "text_c",
+          "name": "text_c",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "text_d",
+          "name": "text_d",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "delimiter",
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clean_whitespace",
+          "name": "clean_whitespace",
+          "type": "COMBO",
+          "widget": {
+            "name": "clean_whitespace"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text Concatenate",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "\n\n",
+        "true"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Save Text File",
+      "pos": [
+        1000,
+        400
+      ],
+      "size": [
+        360,
+        210
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "link": 6
+        },
+        {
+          "localized_name": "path",
+          "name": "path",
+          "type": "STRING",
+          "widget": {
+            "name": "path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_delimiter",
+          "name": "filename_delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_delimiter"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_number_padding",
+          "name": "filename_number_padding",
+          "type": "INT",
+          "widget": {
+            "name": "filename_number_padding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "file_extension",
+          "name": "file_extension",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "file_extension"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "encoding",
+          "name": "encoding",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "encoding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_suffix",
+          "name": "filename_suffix",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "filename_suffix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Save Text File",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "./output/captions",
+        "caption",
+        "_",
+        4,
+        ".txt",
+        "utf-8",
+        ""
+      ]
+    },
+    {
+      "id": 3,
+      "type": "LLM_api_loader",
+      "pos": [
+        20,
+        416
+      ],
+      "size": [
+        360,
+        140
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model_name",
+          "name": "model_name",
+          "type": "STRING",
+          "widget": {
+            "name": "model_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "base_url",
+          "name": "base_url",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "base_url"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "api_key",
+          "name": "api_key",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "is_ollama",
+          "name": "is_ollama",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "is_ollama"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "CUSTOM",
+          "slot_index": 0,
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_llm_party",
+        "ver": "1.2.0",
+        "Node name for S&R": "LLM_api_loader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "minicpm-v",
+        "",
+        "",
+        true
+      ]
+    },
+    {
+      "id": 4,
+      "type": "LLM",
+      "pos": [
+        481,
+        335
+      ],
+      "size": [
+        440,
+        522
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "CUSTOM",
+          "link": 3
+        },
+        {
+          "localized_name": "system_prompt_input",
+          "name": "system_prompt_input",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "user_prompt_input",
+          "name": "user_prompt_input",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "tools",
+          "name": "tools",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "file_content",
+          "name": "file_content",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "images",
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 2
+        },
+        {
+          "localized_name": "extra_parameters",
+          "name": "extra_parameters",
+          "shape": 7,
+          "type": "DICT",
+          "link": null
+        },
+        {
+          "localized_name": "user_history",
+          "name": "user_history",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "system_prompt",
+          "name": "system_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "system_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "user_prompt",
+          "name": "user_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "user_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "is_memory",
+          "name": "is_memory",
+          "type": "COMBO",
+          "widget": {
+            "name": "is_memory"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "is_tools_in_sys_prompt",
+          "name": "is_tools_in_sys_prompt",
+          "type": "COMBO",
+          "widget": {
+            "name": "is_tools_in_sys_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "is_locked",
+          "name": "is_locked",
+          "type": "COMBO",
+          "widget": {
+            "name": "is_locked"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "main_brain",
+          "name": "main_brain",
+          "type": "COMBO",
+          "widget": {
+            "name": "main_brain"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "max_length",
+          "name": "max_length",
+          "type": "INT",
+          "widget": {
+            "name": "max_length"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "imgbb_api_key",
+          "name": "imgbb_api_key",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "imgbb_api_key"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "conversation_rounds",
+          "name": "conversation_rounds",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "conversation_rounds"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "historical_record",
+          "name": "historical_record",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "historical_record"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "is_enable",
+          "name": "is_enable",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "is_enable"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "assistant_response",
+          "name": "assistant_response",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            5
+          ]
+        },
+        {
+          "localized_name": "history",
+          "name": "history",
+          "type": "STRING",
+          "slot_index": 1,
+          "links": []
+        },
+        {
+          "localized_name": "tool",
+          "name": "tool",
+          "type": "STRING",
+          "slot_index": 2,
+          "links": []
+        },
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "slot_index": 3,
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_llm_party",
+        "ver": "1.2.0",
+        "Node name for S&R": "LLM",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "You are an expert image analyst creating captions for a training dataset. Describe each image accurately and concisely.",
+        "Describe this image in 3-5 sentences. Cover: the subjects and their appearance, clothing, pose, facial expression, setting, lighting, and mood.",
+        0.7,
+        "disable",
+        "disable",
+        "disable",
+        "enable",
+        2048,
+        "",
+        100,
+        "",
+        true
+      ]
+    },
+    {
+      "id": 1,
+      "type": "Load Image Batch",
+      "pos": [
+        20,
+        55
+      ],
+      "size": [
+        380,
+        270
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "mode",
+          "name": "mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "index",
+          "name": "index",
+          "type": "INT",
+          "widget": {
+            "name": "index"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "label",
+          "name": "label",
+          "type": "STRING",
+          "widget": {
+            "name": "label"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "path",
+          "name": "path",
+          "type": "STRING",
+          "widget": {
+            "name": "path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "pattern",
+          "name": "pattern",
+          "type": "STRING",
+          "widget": {
+            "name": "pattern"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "allow_RGBA_output",
+          "name": "allow_RGBA_output",
+          "type": "COMBO",
+          "widget": {
+            "name": "allow_RGBA_output"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_text_extension",
+          "name": "filename_text_extension",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "filename_text_extension"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            1,
+            2
+          ]
+        },
+        {
+          "localized_name": "filename_text",
+          "name": "filename_text",
+          "type": "STRING",
+          "slot_index": 1,
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Load Image Batch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "incremental_image",
+        0,
+        0,
+        118,
+        "/media/ai/NUKE/Gallery Downloads/fapello.com/y2kdreamxoxo",
+        "*",
+        "false",
+        "false",
+        "true"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      1,
+      0,
+      4,
+      5,
+      "IMAGE"
+    ],
+    [
+      3,
+      3,
+      0,
+      4,
+      0,
+      "CUSTOM"
+    ],
+    [
+      4,
+      2,
+      0,
+      5,
+      1,
+      "STRING"
+    ],
+    [
+      5,
+      4,
+      0,
+      5,
+      0,
+      "STRING"
+    ],
+    [
+      6,
+      5,
+      0,
+      6,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.2100000000000002,
+      "offset": [
+        323.92561983471035,
+        77.16528925619815
+      ]
+    },
+    "ue_links": [],
+    "links_added_by_ue": []
+  },
+  "version": 0.4
+}

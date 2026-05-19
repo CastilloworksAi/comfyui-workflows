@@ -1,0 +1,6 @@
+.DS_Store
+*.png
+*.jpg
+*.jpeg
+*.safetensors
+*.gguf
